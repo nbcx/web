@@ -23,7 +23,7 @@ type Server struct {
 }
 
 func (c *Server) GetUse() string {
-	return "web {addr} {path}"
+	return "web {path}"
 }
 
 func (c *Server) GetLong() string {
