@@ -1,0 +1,6 @@
+github.com/inconshreveable/mousetrap v1.1.0 h1:wN+x4NVGpMsO7ErUn/mUI3vEoE6Jt13X2s0bqwp9tc8=
+github.com/inconshreveable/mousetrap v1.1.0/go.mod h1:vpF70FUmC8bwa3OWnCshd2FqLfsEA9PFc4w1p2J65bw=
+github.com/nbcx/boot v0.0.0-20240822112436-f9c70b5c0365 h1:EEhh+mo/VfCbqA3g5br+c0YJokUZXU/N5QVHliIZIEs=
+github.com/nbcx/boot v0.0.0-20240822112436-f9c70b5c0365/go.mod h1:HnfT6dFhka5FFv1DkHv+xv99PAw0c0V5Y4wUf9bmQDU=
+github.com/nbcx/flag v0.0.0-20240822112226-ce03d38d466e h1:fRQwhrl5oTekJ9N6LUpBA2imns644L4pKncYlpsLjjo=
+github.com/nbcx/flag v0.0.0-20240822112226-ce03d38d466e/go.mod h1:ds13IHfTBkIcJPe6c8Mu1lnII0mrT0KPsrOEy3TMWec=
