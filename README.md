@@ -1,5 +1,7 @@
 # web
 
+[![Build Status](https://travis-ci.com/nbcx/your-repo.svg?branch=main)](https://travis-ci.com/your-username/your-repo)
+
 A simple static web service
 
 # todo

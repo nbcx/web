@@ -2,10 +2,7 @@ package main
 
 import (
 	"log"
-
-	"fmt"
-	"net/http"
-	"strings"
+	"web/pkg"
 
 	"github.com/nbcx/boot"
 )
@@ -19,7 +16,8 @@ func main() {
 
 type Server struct {
 	boot.Default
-	Addr string `name:"addr" short:"a" value:":8080" usage:"service monitoring address"`
+	Addr  string `name:"addr" short:"a" value:":8080" usage:"service monitoring address"`
+	Https bool   `name:"https" short:"s" value:"false" usage:"enable https server"`
 }
 
 func (c *Server) GetUse() string {
@@ -31,19 +29,14 @@ func (c *Server) GetLong() string {
 }
 
 func (c *Server) Exec(r ...string) error {
-	path := "./"
+	path := "."
 	if len(r) > 0 {
 		path = r[0]
 	}
-	// set static dir
-	http.Handle("/", http.FileServer(http.Dir(path)))
-
-	// show in terminal and click jump
-	show := c.Addr
-	if strings.Split(c.Addr, ":")[0] == "" {
-		show = fmt.Sprintf("http://localhost%s", c.Addr)
+	if c.Https {
+		pkg.Https(c.Addr, path)
+	} else {
+		return pkg.Http(c.Addr, path)
 	}
-	fmt.Printf("Listening: \x1b]8;;%s\x1b\\%s\x1b]8;;\x1b\\\n", show, show)
-	err := http.ListenAndServe(c.Addr, nil)
-	return err
+	return nil
 }

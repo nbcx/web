@@ -17,6 +17,19 @@ branches:
   only:
     - main
 
+deploy:
+    provider: releases
+    api_key:
+        secure: xxxx
+    # 使用glob匹配发布bin目录下的文件
+    file_glob: true
+    file: bin/*
+    skip_cleanup: true
+    on:
+        repo: nbcx/web
+        # tag才触发发布
+        tags: true
+
 # 通知设置
 notifications:
   email:
@@ -24,3 +37,5 @@ notifications:
       - collin@nb.cx
     on_success: change
     on_failure: always
+
+
